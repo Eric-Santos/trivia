@@ -1,12 +1,21 @@
 import Flashcard from "./Flashcard";
+import Data from "../Data.json";
 
 // map over flashcard component, import json data here
 
 const FlashcardList = () => {
   return (
     <div>
-      <h1>Outer FlashcardList component</h1>
-      <Flashcard />
+      {Data.map((post) => {
+        return (
+          <Flashcard
+            key={post.id}
+            question={post.question}
+            incorrect={post.incorrect}
+            correct={post.correct}
+          />
+        );
+      })}
     </div>
   );
 };
