@@ -1,14 +1,16 @@
 import { useState } from "react";
 
+import "../styles/flashcardList.css";
 import Flashcard from "./Flashcard";
 import Data from "../Data.json";
 
-// map over flashcard component, import json data here
-
+//json data on state
 const FlashcardList = () => {
-  const [cards, setCards] = useState({ Data });
+  //removed setCards to clear consoleg warnings
+  const [cards] = useState({ Data });
   return (
-    <div>
+    <div className="cardlist">
+      {/* map over flashcard component, with state */}
       {cards.Data.map((post) => {
         return (
           <Flashcard
